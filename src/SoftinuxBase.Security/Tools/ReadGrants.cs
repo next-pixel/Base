@@ -121,8 +121,9 @@ namespace SoftinuxBase.Security.Tools
         /// <param name="storage_"></param>
         /// <param name="roleName_"></param>
         /// <param name="roleManager_"></param>
+        /// <param name="userManager_"></param>
         /// <returns></returns>
-        public static async Task<bool> IsLastAdmin(RoleManager<IdentityRole<string>> roleManager_, IStorage storage_, string roleName_, string extensionName_)
+        public static async Task<bool> IsLastAdmin(RoleManager<IdentityRole<string>> roleManager_, UserManager<User> userManager_, IStorage storage_, string roleName_, string extensionName_)
         {
             // Is there a user directly granted Admin for this extension?
             if (storage_.GetRepository<IUserPermissionRepository>().FindBy(extensionName_, Permission.Admin) != null)
@@ -131,22 +132,22 @@ namespace SoftinuxBase.Security.Tools
                 return false;
             }
 
-            var rolePermissionRecords = storage_.GetRepository<IRolePermissionRepository>().FindBy(extensionName_, Permission.Admin);
+            var rolePermissionRecordsWithAdmin = storage_.GetRepository<IRolePermissionRepository>().FindBy(extensionName_, Permission.Admin);
 
-            if (!rolePermissionRecords.Any())
+            if (!rolePermissionRecordsWithAdmin.Any())
             {
                 // This method shouldn't have been called in this case :-)
                 return false;
             }
 
             var roleId = (await roleManager_.FindByNameAsync(roleName_)).Id;
-            if (rolePermissionRecords.Count() == 1 && rolePermissionRecords.First().Id == roleId)
+            if (rolePermissionRecordsWithAdmin.Count() == 1 && rolePermissionRecordsWithAdmin.First().Id == roleId)
             {
                 return true;
             }
 
             // The roles that have Admin right must have users linked to them
-            // TODO find how to query that using Identity (role manager, user manager) (remove roleId)
+            
             // and if at least one user found => return false, else true
 
             return false;

@@ -8,6 +8,9 @@ using SoftinuxBase.Security.Data.Entities;
 
 namespace SoftinuxBase.Security.Data.EntityFramework
 {
+    /// <summary>
+    /// Additional repository to access WIF objects in an optimized way.
+    /// </summary>
     public class AspNetUsersRepository : RepositoryBase<User>, IAspNetUsersRepository
     {
         /// <summary>

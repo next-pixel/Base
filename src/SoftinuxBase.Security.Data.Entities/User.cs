@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace SoftinuxBase.Security.Data.Entities
 {
+    /// <summary>
+    /// This class extends the IdentityUser with custom fields.
+    /// It also wraps it with  so that we can query for it with ExtCore's repository feature.
+    /// </summary>
     public class User : IdentityUser, IEntity
     {
         public string FirstName { get; set; }

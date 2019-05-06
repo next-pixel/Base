@@ -5,6 +5,9 @@ using ExtCore.Data.Abstractions;
 
 namespace SoftinuxBase.Security.Data.Abstractions
 {
+    /// <summary>
+    /// Additional repository to access WIF objects in an optimized way.
+    /// </summary>
     public interface IAspNetUsersRepository : IRepository
     {
         bool FindByNormalizedUserNameOrEmail(string value_);
