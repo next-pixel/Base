@@ -16,6 +16,7 @@ using SoftinuxBase.SeedDatabase;
 using Xunit;
 using Constants = SoftinuxBase.Common.Constants;
 using Permission = SoftinuxBase.Security.Common.Enums.Permission;
+using Role = SoftinuxBase.SeedDatabase.Role;
 
 namespace SecurityTest
 {

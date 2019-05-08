@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Identity;
 namespace SoftinuxBase.Security.Data.Entities
 {
     /// <summary>
-    /// This class wraps the IdentityRole so that we can query for it with ExtCore's repository feature.
+    /// This class wraps the IdentityRole so that we can query for it with ExtCore's repository feature:
+    /// it's used as the repository interface generic "T" parameter.
     /// </summary>
     public class Role : IdentityRole, IEntity
     {

@@ -32,15 +32,7 @@ namespace SoftinuxBase.Security.Data.EntityFramework
             return All().FirstOrDefault(e_ => e_.RoleId == roleId_ && e_.Extension == extensionName_);
         }
 
-        public IEnumerable<RolePermission> FindBy(string extensionName_, Common.Enums.Permission level_)
-        {
-            return from rp in storageContext.Set<RolePermission>()
-                join p in storageContext.Set<Permission>() on rp.PermissionId equals p.Id
-                where rp.Extension == extensionName_ && p.Name == level_.GetPermissionName()
-                select rp;
-        }
-
-        public IEnumerable<RolePermission> FilteredByRoleId(string roleId_)
+       public IEnumerable<RolePermission> FilteredByRoleId(string roleId_)
         {
             return All().Where(e_ => e_.RoleId == roleId_).ToList();
         }

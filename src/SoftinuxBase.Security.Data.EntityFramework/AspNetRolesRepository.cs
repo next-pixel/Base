@@ -21,23 +21,18 @@ namespace SoftinuxBase.Security.Data.EntityFramework
         /// <param name="permissionLevel_"></param>
         /// <param name="extensionName_"></param>
         /// <returns></returns>
-        public IEnumerable<IdentityRole> FindHavingUsers(SoftinuxBase.Security.Common.Enums.Permission permissionLevel_, string extensionName_)
+        public IEnumerable<IdentityRole> FindHavingUsers(Common.Enums.Permission permissionLevel_, string extensionName_)
         {
-       /*     IEnumerable<IdentityRole> roles =
+            IEnumerable<IdentityRole> roles =
                 from p in storageContext.Set<Permission>()
                 join rp in storageContext.Set<RolePermission>() on p.Id equals rp.PermissionId
-                join r in storageContext.Set<IdentityRole>() on rp.RoleId = r.Id
+                join r in storageContext.Set<IdentityRole>() on rp.RoleId equals r.Id
                 join ur in storageContext.Set<IdentityUserRole<string>>() on r.Id equals ur.RoleId
-
-                //from r in storageContext.Set<IdentityRole>()
-                //join rp in storageContext.Set<RolePermission>() on r.Id equals rp.RoleId
-                //join ur in storageContext.Set<IdentityUserRole<string>>() on r.Id equals ur.RoleId
-                //join p in storageContext.Set<Permission>() on rp.PermissionId = p.Id
-
-                //where rp.Extension == extensionName_ and rp.
+                join u in storageContext.Set<User>() on ur.UserId equals u.Id
+                where rp.Extension == extensionName_ && p.Name == extensionName_
                 select r;
-                */
-       return null; // TODO
+
+            return roles;
         }
     }
 }
