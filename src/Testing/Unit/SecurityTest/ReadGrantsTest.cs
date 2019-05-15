@@ -279,7 +279,6 @@ namespace SecurityTest
             string extensionName = "X";
             var testRole = new IdentityRole<string> { Name = "A great role" };
             var anotherTestRole = new IdentityRole<string> { Name = "Another great role" };
-            var userPermissionRepo = DatabaseFixture.Storage.GetRepository<IUserPermissionRepository>();
             var rolePermissionRepo = DatabaseFixture.Storage.GetRepository<IRolePermissionRepository>();
             var permissionRepo = DatabaseFixture.Storage.GetRepository<IPermissionRepository>();
             var adminPermission = permissionRepo.Find(Permission.Admin);
@@ -335,6 +334,13 @@ namespace SecurityTest
                 await DatabaseFixture.UserManager.DeleteAsync(testUser);
             }
         }
+
+        /// <summary>
+        /// A role is linked to the extension "X" with Admin permission. It is linked to one user.
+        /// Another role is linked to the extension "X" with Admin permission. It is not linked to any user.
+        /// IsLastAdmin check should return true.
+        /// </summary>
+        /// <returns>The running Task for this unit test</returns>
 
         [Fact]
         public async Task IsLastAdmin_Yes_StillAnotherRoleButWithoutUsersForThisExtension()
