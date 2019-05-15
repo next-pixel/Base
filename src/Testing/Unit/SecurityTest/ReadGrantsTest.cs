@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CommonTest;
 using ExtCore.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using SoftinuxBase.Infrastructure.Interfaces;
 using SoftinuxBase.Security.Data.Abstractions;
 using SoftinuxBase.Security.Data.Entities;
@@ -179,15 +180,87 @@ namespace SecurityTest
             }
         }
 
+        /// <summary>
+        /// A user is granted Admin permission for extension "X".
+        /// A role is linked to the extension "X" with Write permission. It is linked to another user.
+        /// IsLastAdmin check should return false.
+        /// </summary>
+        /// <returns></returns>
         [Fact]
-        public async Task IsLastAdmin_No_StillAnUserForThisExtension()
+        public async Task IsLastAdmin_No_StillAnUserDirectAdminForThisExtension()
         {
-            // TODO
-            throw new NotImplementedException("To be coded");
+            // Arrange
+            var testAdminUser = new User {
+                FirstName = "John",
+                LastName = "Superman",
+                Email = "johnsuperman@softinux.com",
+                UserName = "johnsuperman"
+            };
+            var testRoleUser = new User
+            {
+                FirstName = "Henry",
+                LastName = "Ford",
+                Email = "henryford@softinux.com",
+                UserName = "henryford"
+            };
+            string extensionName = "X";
+            var testRole = new IdentityRole<string> {Name = "A great role"};
+            var userPermissionRepo = DatabaseFixture.Storage.GetRepository<IUserPermissionRepository>();
+            var rolePermissionRepo = DatabaseFixture.Storage.GetRepository<IRolePermissionRepository>();
+            var permissionRepo = DatabaseFixture.Storage.GetRepository<IPermissionRepository>();
+            var adminPermission = permissionRepo.Find(Permission.Admin);
+            var writePermission = permissionRepo.Find(Permission.Write);
+
+            try
+            {
+                // 1. Create a test user
+                var userCreated = await DatabaseFixture.UserManager.CreateAsync(testAdminUser);
+                if(!userCreated.Succeeded)
+                    throw new Exception("Error creating admin test user");
+                userCreated = await DatabaseFixture.UserManager.CreateAsync(testRoleUser);
+                if (!userCreated.Succeeded)
+                    throw new Exception("Error creating role test user");
+
+                // 2. Assign Admin permission to test admin user for extension X
+                userPermissionRepo.Create(new UserPermission { Extension = extensionName, UserId = testAdminUser.Id, PermissionId = adminPermission.Id });
+
+                // 3. Record test role and assign it to test role user
+                var roleCreated = await DatabaseFixture.RoleManager.CreateAsync(testRole);
+                if (!roleCreated.Succeeded)
+                    throw new Exception("Error creating test role");
+                rolePermissionRepo.Create(new RolePermission {Extension = extensionName, PermissionId = writePermission.Id, RoleId = testRole.Id });
+                var roleAddedToUser = await DatabaseFixture.UserManager.AddToRoleAsync(testRoleUser, testRole.Name);
+                if (!roleAddedToUser.Succeeded)
+                    throw new Exception("Error adding role to user");
+
+                // 4. Commit the changes
+                DatabaseFixture.Storage.Save();
+
+                // Execute
+                bool isLastAdmin = ReadGrants.IsLastAdmin(DatabaseFixture.RoleManager, DatabaseFixture.Storage, testRole.Name, extensionName);
+
+                // Assert
+                Assert.False(isLastAdmin);
+            }
+            finally
+            {
+                // Cleanup created data
+                // role-permission record
+                rolePermissionRepo.Delete(testRole.Id, extensionName);
+                // role-user record
+                await DatabaseFixture.UserManager.RemoveFromRoleAsync(testRoleUser, testRole.Name);
+                // role
+                await DatabaseFixture.RoleManager.DeleteAsync(testRole);
+                // user-permission record
+                userPermissionRepo.Delete(testAdminUser.Id, adminPermission.Id);
+                // user
+                await DatabaseFixture.UserManager.DeleteAsync(testRoleUser);
+                await DatabaseFixture.UserManager.DeleteAsync(testAdminUser);
+            }
         }
 
         [Fact]
-        public async Task IsLastAdmin_No_StillAnotherRoleWithUsersForThisExtension()
+        public async Task IsLastAdmin_No_StillAnotherAdminRoleWithUsersForThisExtension()
         {
             // TODO
             throw new NotImplementedException("To be coded");
@@ -201,7 +274,7 @@ namespace SecurityTest
         }
 
         [Fact]
-        public async Task IsLastAdmin_Yes_NoOthrtRoleWithUsersForThisExtension()
+        public async Task IsLastAdmin_Yes_NoOthertRoleWithUsersForThisExtension()
         {
             // TODO
             throw new NotImplementedException("To be coded");
