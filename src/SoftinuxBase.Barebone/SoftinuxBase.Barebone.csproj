@@ -49,7 +49,7 @@
     <!-- Javascript -->
     <EmbeddedResource Include="..\..\node_modules\jquery\dist\jquery.min.js" LinkBase="node_modules\jquery\dist\" />
     <EmbeddedResource Include="..\..\node_modules\jquery\dist\jquery.min.map" LinkBase="node_modules\jquery\dist\" />
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\js\bootstrap.min.js" LinkBase="node_modules\bootstrap\dist\js\" />
+    <!--<EmbeddedResource Include="..\..\node_modules\bootstrap\dist\js\bootstrap.min.js" LinkBase="node_modules\bootstrap\dist\js\" />-->
     <EmbeddedResource Include="..\..\node_modules\jquery-validation\dist\jquery.validate.min.js" LinkBase="node_modules\jquery-validation\dist\" />
     <EmbeddedResource Include="..\..\node_modules\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js" LinkBase="node_modules\jquery-validation-unobtrusive\dist\" />
     <EmbeddedResource Include="..\..\node_modules\js-cookie\src\js.cookie.js" LinkBase="node_modules\js-cookie\src\" />
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="..\..\node_modules\codemirror\addon\scroll\annotatescrollbar.js" LinkBase="node_modules\codemirror\addon\scroll\" />
     <!-- Css -->
     <EmbeddedResource Include="..\..\node_modules\normalize.css\normalize.css" LinkBase="node_modules\normalize.css\" />
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css" LinkBase="node_modules\bootstrap\dist\css\" />
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css.map" LinkBase="node_modules\bootstrap\dist\css\" />
+    <!--<EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css" LinkBase="node_modules\bootstrap\dist\css\" />
+    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css.map" LinkBase="node_modules\bootstrap\dist\css\" />-->
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-icons.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-colors.css" LinkBase="node_modules\metro4-dist\css\" />
@@ -106,11 +106,11 @@
     <EmbeddedResource Include="..\..\node_modules\admin-lte\dist\css\skins\**" LinkBase="node_modules\admin-lte\dist\css\skins\" />
     <EmbeddedResource Include="..\..\node_modules\admin-lte\dist\css\alt\**" LinkBase="node_modules\admin-lte\dist\css\alt\" />
     <!-- Fonts -->
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" LinkBase="node_modules\bootstrap\dist\fonts\" />
+    <!--<EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" LinkBase="node_modules\bootstrap\dist\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" LinkBase="node_modules\bootstrap\dist\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" LinkBase="node_modules\bootstrap\dist\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" LinkBase="node_modules\bootstrap\dist\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" LinkBase="node_modules\bootstrap\dist\fonts\" />
+    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" LinkBase="node_modules\bootstrap\dist\fonts\" />-->
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.woff" LinkBase="node_modules\font-awesome\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.woff2" LinkBase="node_modules\font-awesome\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.ttf" LinkBase="node_modules\font-awesome\fonts\" />
