@@ -54,8 +54,9 @@
     <EmbeddedResource Include="..\..\node_modules\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js" LinkBase="node_modules\jquery-validation-unobtrusive\dist\" />
     <EmbeddedResource Include="..\..\node_modules\js-cookie\src\js.cookie.js" LinkBase="node_modules\js-cookie\src\" />
     <EmbeddedResource Include="..\..\node_modules\icheck\icheck.js" LinkBase="node_modules\icheck\" />
-    <EmbeddedResource Include="..\..\node_modules\inputmask\dist\min\jquery.inputmask.bundle.min.js" LinkBase="node_modules\inputmask\dist\min\" />
-    <EmbeddedResource Include="..\..\node_modules\admin-lte\dist\js\adminlte.min.js" LinkBase="node_modules\admin-lte\dist\js\" />
+    <EmbeddedResource Include="..\..\node_modules\inputmask\dist\bindings\inputmask.binding.js" LinkBase="node_modules\inputmask\dist\bindings\" />
+    <EmbeddedResource Include="..\..\node_modules\metro4-dist\js\metro.js" LinkBase="node_modules\metro4-dist\js\" />
+    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\ionicons.js" LinkBase="node_modules\ionicons\dist\" />
     <EmbeddedResource Include="..\..\node_modules\toastr\build\toastr.min.js" LinkBase="node_modules\toastr\build\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\lib\codemirror.js" LinkBase="node_modules\codemirror\lib\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\mode\sql\sql.js" LinkBase="node_modules\codemirror\mode\sql\" />
@@ -77,11 +78,11 @@
     <EmbeddedResource Include="..\..\node_modules\normalize.css\normalize.css" LinkBase="node_modules\normalize.css\" />
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css" LinkBase="node_modules\bootstrap\dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css.map" LinkBase="node_modules\bootstrap\dist\css\" />
-    <EmbeddedResource Include="..\..\node_modules\admin-lte\dist\css\AdminLTE.min.css" LinkBase="node_modules\admin-lte\dist\css\" />
-    <EmbeddedResource Include="..\..\node_modules\admin-lte\dist\css\adminlte.min.css.map" LinkBase="node_modules\admin-lte\dist\css\" />
+    <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro.css" LinkBase="node_modules\metro4-dist\css\" />
+    <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-icons.css" LinkBase="node_modules\metro4-dist\css\" />
+    <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-colors.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\css\font-awesome.min.css" LinkBase="node_modules\font-awesome\css\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\css\font-awesome.css.map" LinkBase="node_modules\font-awesome\css\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\css\ionicons.min.css" LinkBase="node_modules\ionicons\dist\css\" />
     <!-- <EmbeddedResource Include="node_modules\ionicons\dist\css\ionicons.min.css.map" /> -->
     <EmbeddedResource Include="..\..\node_modules\wfk-opensans\opensans.css" LinkBase="node_modules\wfk-opensans\" />
     <EmbeddedResource Include="..\..\node_modules\toastr\build\toastr.min.css" LinkBase="node_modules\toastr\build\" />
@@ -115,11 +116,6 @@
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.ttf" LinkBase="node_modules\font-awesome\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.svg" LinkBase="node_modules\font-awesome\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\FontAwesome.otf" LinkBase="node_modules\font-awesome\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\fonts\ionicons.eot" LinkBase="node_modules\ionicons\dist\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\fonts\ionicons.svg" LinkBase="node_modules\ionicons\dist\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\fonts\ionicons.ttf" LinkBase="node_modules\ionicons\dist\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\fonts\ionicons.woff" LinkBase="node_modules\ionicons\dist\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\fonts\ionicons.woff2" LinkBase="node_modules\ionicons\dist\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\_references.js" />

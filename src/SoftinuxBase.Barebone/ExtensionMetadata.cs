@@ -49,11 +49,11 @@ namespace SoftinuxBase.Barebone
             new StyleSheet("/node_modules.font_awesome.css.font-awesome.min.css", 400),
 
             // -- Admin LTE
-            new StyleSheet("/node_modules.admin_lte.dist.css.AdminLTE.min.css", 410),
+            new StyleSheet("/node_modules.metro4-dist.css.metro.css", 410),
 
             // new StyleSheet("/node_modules.admin_lte.dist.css.adminlte.min.css.map", 411),
-            new StyleSheet("/node_modules.admin_lte.dist.css.skins.skin-blue.min.css", 412),
-            new StyleSheet("/node_modules.ionicons.dist.css.ionicons.min.css", 413),
+            new StyleSheet("/node_modules.metro4-dist.css.metro-icons.css", 412),
+            new StyleSheet("/node_modules.metro4-dist.css.metro-colors.css", 413),
 
             // new StyleSheet("/node_modules.ionicons.dist.css.ionicons.min.css.map", 414),
             new StyleSheet("/node_modules.icheck.skins.square.blue.css", 415),
@@ -93,12 +93,13 @@ namespace SoftinuxBase.Barebone
             new Script("/node_modules.js_cookie.src.js.cookie.js", false, 500),
 
             // -- Admin LTE
-            new Script("/node_modules.inputmask.dist.min.jquery.inputmask.bundle.min.js", false, 600),
+            new Script("/node_modules.inputmask.inputmask.bindings.js", false, 600),
             new Script("/node_modules.icheck.icheck.js", false, 650),
-            new Script("/node_modules.admin_lte.dist.js.adminlte.min.js", false, 660),
+            new Script("/node_modules.metro4-dist.js.metro.js", false, 660),
 
             // -- Roastr
             new Script("/node_modules.toastr.build.toastr.min.js", false, 661),
+            new Script("/node_modules.ionicons.dist.ionicons.js", false, 662),
 
             // -- Codemirror
             // new Script("/node_modules.codemirror.lib.codemirror.js",662),
