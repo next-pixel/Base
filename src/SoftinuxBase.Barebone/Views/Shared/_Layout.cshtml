@@ -26,61 +26,46 @@
     System.Reflection.PropertyInfo[] properties = Model?.GetType().GetProperties();
     bool hasModelWithErrorMessageProperty = properties != null && properties.Where(p => p.Name.Equals("ErrorMessage")).Any();
 }
-<body class="@authClass" style="@if(!User.Identity.IsAuthenticated) {@Html.Raw("background-color: #ECF0F5;");}">
+<body class="@authClass">
     <div class="notify-container"></div>
     @if (User.Identity.IsAuthenticated)
     {
-        <div data-role="navview" data-toggle="#paneToggle" data-expanded="xl" data-compact="lg" data-active-state="true" class="navview compact-lg expanded-xl" data-role-navview="true">
+        <div data-role="navview" data-toggle="#paneToggle" data-expand="xl" data-compact="lg" data-active-state="true" data-role-navview="true" id="navview-1582900115834133" class="navview navview-compact-lg navview-expand-xl">
             <div class="navview-pane">
-                @* Header Logo *@
                 <div class="bg-cyan d-flex flex-align-center">
                     <button class="pull-button m-0 bg-darkCyan-hover">
                         <span class="mif-menu fg-white"></span>
                     </button>
-                    <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">@Html.Raw(OptionsApplicationConfiguration.Value.Name)</h2>
+                    <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">SOFTINUX</h2>
+                    
+                    <ul class="navview-menu mt-4" id="side-menu">
+                        <li class="item-header">MAIN NAVIGATION</li>
+                         @await Component.InvokeAsync("Menu");
+                    </ul>
                 </div>
-                @* Navigation Menu *@
-                <ul class="navview-menu mt-4" id="side-menu" style="height: calc(100% - 225px);">
-                    <li class="item-header">MAIN NAVIGATION</li>
-                    @await Component.InvokeAsync("Menu")
-                </ul>
-                @* Footer Navigation Menu *@
-                <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0px;">
-                    <div>© 2019 <a href="mailto:sergey@pimenov.com.ua" class="text-muted fg-white-hover no-decor">SOFTINUX</a></div>
+                <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
+                    <div>© 2019 <a href="#" class="text-muted fg-white-hover no-decor">Softinux</a></div>
                     <div>Created with <a href="https://metroui.org.ua" class="text-muted fg-white-hover no-decor">Metro 4</a></div>
                 </div>
             </div>
-        </div>
-        <div class="navview-content h-100">
-            @* Blue App Bar *@
-            <div data-role="appbar" class="pos-absolute bg-darkCyan fg-white app-bar" id="app-bar-1582814825202775" data-role-appbar="true">
-                <button type="button" class="hamburger menu-down hidden" style="display: none;"><span class="line"></span><span class="line"></span><span class="line"></span></button>
-                <a href="#" class="app-bar-item d-block d-none-lg" id="paneToggle"><span class="mif-menu"></span></a>
 
-                <div class="app-bar-container ml-auto">
+            <div class="navview-content h-100">
+                <div data-role="appbar" class="pos-absolute bg-darkCyan fg-white app-bar" data-role-appbar="true" id="app-bar-1582900115867967">
+                    
                 </div>
-            </div>
-            @* Main Area *@
-            <div id="content-wrapper" class="content-inner h-100" style="overflow-y: auto">
-                @* Breadcrumbs *@
-                <div class="row border-bottom bd-lightGray m-3">
-                    <div class="cell-md-4 text-center text-left-md">
-                        <h3 class="dashboard-section-title">@RenderSection("title", false)</h3>
-                        @if (@Html.IsDebug())
-                        {
-                            <partial name="_IsDebugBanner" />
-                        }
+                <div id="content-wrapper" class="content-inner h-100" style="overflow-y: auto">
+                    <div class="row border-bottom bd-lightGray m-3">
+                        <div class="cell-md-4 text-center text-left-md">
+                            <h3 class="dashboard-section-title">@RenderSection("title", false) <small>Version 0.1.0</small></h3>
+                        </div>
+                    
+                        <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md">
+                            <ul class="breadcrumbs bg-transparent">
+                                <li class="page-item"><a href="#" class="page-link"><span class="mif-meter"></span></a></li>
+                                <li class="page-item"><a href="#" class="page-link">Need to render title also here</a></li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md">
-                        <ul class="breadcrumbs bg-transparent">
-                            <li class="page-item"><a href="#" class="page-link"><span class="mif-meter"></span></a></li>
-                            <li class="page-item"><a href="#" class="page-link">Dashboard</a></li>
-                        </ul>
-                    </div>
-                </div>
-                @* Main Content *@
-                <div class="m-3">
                     @RenderBody()
                 </div>
             </div>

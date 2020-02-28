@@ -47,6 +47,7 @@ namespace SoftinuxBase.Barebone
             new StyleSheet("/node_modules.font_awesome.css.font-awesome.min.css", 400),
             // -- Metro 4
             new StyleSheet("/node_modules.metro4_dist.css.metro.css", 410),
+            new StyleSheet("/node_modules.metro4_dist.css.metro-all.css", 411),
             new StyleSheet("/node_modules.metro4_dist.css.metro-icons.css", 412),
             new StyleSheet("/node_modules.metro4_dist.css.metro-colors.css", 413),
 

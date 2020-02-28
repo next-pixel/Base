@@ -10,21 +10,21 @@
 <div class="bgpicture">
 
     <div class="login-box">
-            <form class="bg-white p-4" action="javascript:" id="loginform" method="post" data-role="validator" data-clear-invalid="2000" data-on-error-form="invalidForm" novalidate="novalidate" data-role-validator="true">
+            <form class="bg-white p-4" id="loginform" method="post" data-role="validator" data-clear-invalid="2000" data-on-error-form="invalidForm" novalidate="novalidate" data-role-validator="true">
                 @Html.AntiForgeryToken()
                 <img src="/img/@Html.Raw(OptionsApplicationConfiguration.Value.BrandLogo)" class="place-right mt-4-minus mr-4-minus" alt="BrandLogo">
                 <h1 class="mb-0">Login</h1>
                 <div class="text-muted mb-4">Sign in to start your session</div>
-                <div class="form-group"><div class="input required"><input id="username" type="text" data-role="input" placeholder="Username or Email" data-append="<span class='mif-envelop'>" data-validate="required" class="" data-role-input="true"><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div><div class="append"><span class="mif-envelop"></span></div></div>
+                <div class="form-group"><div class="input required"><input name="Username" id="username" type="text" data-role="input" placeholder="Username or Email" data-append="<span class='mif-envelop'>" data-validate="required" class="" data-role-input="true"><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div><div class="append"><span class="mif-envelop"></span></div></div>
 
                     <span class="invalid_feedback">Please enter a valid username or email</span>
                 </div>
-                <div class="form-group"><div class="input required"><input id="password" type="password" data-role="input" placeholder="Password" data-append="<span class='mif-key'>" data-validate="required" class="" data-role-input="true"><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button><button class="button input-reveal-button" tabindex="-1" type="button"><span class="default-icon-eye"></span></button></div><div class="append"><span class="mif-key"></span></div></div>
+                <div class="form-group"><div class="input required"><input name="Password" id="password" type="password" data-role="input" placeholder="Password" data-append="<span class='mif-key'>" data-validate="required" class="" data-role-input="true"><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button><button class="button input-reveal-button" tabindex="-1" type="button"><span class="default-icon-eye"></span></button></div><div class="append"><span class="mif-key"></span></div></div>
 
                     <span class="invalid_feedback">Please enter a password</span>
                 </div>
                 <div class="form-group d-flex flex-align-center flex-justify-between">
-                    <label class="checkbox" for="checkbox-158288172433470"><input type="checkbox" data-role="checkbox" data-caption="Remember Me" id="checkbox-158288172433470" class="" data-role-checkbox="true"><span class="check"></span><span class="caption">Remember Me</span></label>
+                    <label class="checkbox" for="checkbox-158288172433470"><input name="RememberMe" id="rememberMe" type="checkbox" data-role="checkbox" data-caption="Remember Me" id="checkbox-158288172433470" class="" data-role-checkbox="true"><span class="check"></span><span class="caption">Remember Me</span></label>
                     <button type="submit" class="button primary">Sign In</button>
                 </div>
                 <div class="form-group border-top bd-default pt-2">

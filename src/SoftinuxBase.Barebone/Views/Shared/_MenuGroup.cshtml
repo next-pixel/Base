@@ -5,19 +5,19 @@ Licensed under the MIT License, Version 2.0. See License.txt in the project root
 
 @model SoftinuxBase.Barebone.ViewModels.Shared.MenuGroup.MenuGroupViewModel
 
-<li class="treeview">
+<li class="navview-menu stay-open" data-role="dropdown">
           <a href="#">
             <i class="fa @(Model.FontAwesomeClass)"></i> <span>@(Model.Name)</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-    <ul class="treeview-menu">
+
         @foreach (var menuItem in Model.MenuItems)
         {
             <partial name="_MenuItem" model="menuItem" />
         }
-    </ul>
+
 </li>
 
 
