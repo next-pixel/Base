@@ -37,12 +37,11 @@
                         <span class="mif-menu fg-white"></span>
                     </button>
                     <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">SOFTINUX</h2>
-                    
-                    <ul class="navview-menu mt-4" id="side-menu">
-                        <li class="item-header">MAIN NAVIGATION</li>
-                         @await Component.InvokeAsync("Menu");
-                    </ul>
                 </div>
+                <ul class="navview-menu mt-4" id="side-menu">
+                    <li class="item-header">MAIN NAVIGATION</li>
+                     @await Component.InvokeAsync("Menu")
+                </ul>
                 <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
                     <div>© 2019 <a href="#" class="text-muted fg-white-hover no-decor">Softinux</a></div>
                     <div>Created with <a href="https://metroui.org.ua" class="text-muted fg-white-hover no-decor">Metro 4</a></div>
