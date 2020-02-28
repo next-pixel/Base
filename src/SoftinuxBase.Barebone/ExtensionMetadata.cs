@@ -43,23 +43,12 @@ namespace SoftinuxBase.Barebone
         {
             new StyleSheet("/node_modules.wfk_opensans.opensans.css", 100),
             new StyleSheet("/node_modules.normalize.css.normalize.css", 200),
-            new StyleSheet("/node_modules.bootstrap.dist.css.bootstrap.min.css", 300),
-
-            // new StyleSheet("/node_modules.bootstrap.dist.css.bootstrap.min.css.map", 310),
+            new StyleSheet("/node_modules.bootstrap.css.bootstrap.min.css", 300),
             new StyleSheet("/node_modules.font_awesome.css.font-awesome.min.css", 400),
-
-            // -- Admin LTE
-            new StyleSheet("/node_modules.metro4-dist.css.metro.css", 410),
-
-            // new StyleSheet("/node_modules.admin_lte.dist.css.adminlte.min.css.map", 411),
-            new StyleSheet("/node_modules.metro4-dist.css.metro-icons.css", 412),
-            new StyleSheet("/node_modules.metro4-dist.css.metro-colors.css", 413),
-
-            // new StyleSheet("/node_modules.ionicons.dist.css.ionicons.min.css.map", 414),
-            new StyleSheet("/node_modules.icheck.skins.square.blue.css", 415),
-            new StyleSheet("/node_modules.icheck.skins.minimal.blue.css", 416),
-            new StyleSheet("/node_modules.icheck.skins.flat.blue.css", 417),
-            new StyleSheet("/node_modules.icheck.skins.line.blue.css", 418),
+            // -- Metro 4
+            new StyleSheet("/node_modules.metro4_dist.css.metro.css", 410),
+            new StyleSheet("/node_modules.metro4_dist.css.metro-icons.css", 412),
+            new StyleSheet("/node_modules.metro4_dist.css.metro-colors.css", 413),
 
             // -- Toastr
             new StyleSheet("/node_modules.toastr.build.toastr.min.css", 417),
@@ -87,19 +76,19 @@ namespace SoftinuxBase.Barebone
         public IEnumerable<Script> Scripts => new[]
         {
             new Script("/node_modules.jquery.dist.jquery.min.js", false, 100),
-            new Script("/node_modules.bootstrap.dist.js.bootstrap.min.js", false, 200),
             new Script("/node_modules.jquery_validation.dist.jquery.validate.min.js", false, 300),
             new Script("/node_modules.jquery_validation_unobtrusive.dist.jquery.validate.unobtrusive.js", false, 400),
+            new Script("/node_modules.bootstrap.js.bootstrap.bundle.min.js", false, 401),
             new Script("/node_modules.js_cookie.src.js.cookie.js", false, 500),
 
             // -- Admin LTE
-            new Script("/node_modules.inputmask.inputmask.bindings.js", false, 600),
-            new Script("/node_modules.icheck.icheck.js", false, 650),
-            new Script("/node_modules.metro4-dist.js.metro.js", false, 660),
+            new Script("/node_modules.inputmask.dist.inputmask.min.js", false, 600),
+            new Script("/node_modules.metro4_dist.js.metro.js", false, 660),
 
             // -- Roastr
             new Script("/node_modules.toastr.build.toastr.min.js", false, 661),
-            new Script("/node_modules.ionicons.dist.ionicons.js", false, 662),
+            new Script("/node_modules.ionicons.ionicons.js", false, 662),
+            new Script("/node_modules.ionicons.ionicons.esm.js", true, 663),
 
             // -- Codemirror
             // new Script("/node_modules.codemirror.lib.codemirror.js",662),

@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jquery": "^3.3.33",
+    "bootstrap": "^4.4.1",
     "metro4-dist": "4.3.5",
     "codemirror": "^5.52.0",
     "datatables.net": "^1.10.20",
