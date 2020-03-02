@@ -32,7 +32,7 @@ namespace SoftinuxBase.Infrastructure
             Name = name_;
             Position = position_;
 
-            FontAwesomeClass = fontAwesomeClass_ ?? "fa-circle-o";
+            FontAwesomeClass = fontAwesomeClass_ ?? "far fa-circle";
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace SoftinuxBase.Infrastructure
         /// <param name="url_">set menu item route url.</param>
         /// <param name="name_">set menu item display name.</param>
         /// <param name="position_">set menu item position in menu group.</param>
-        /// <param name="fontAwesomeClass_">set menu item icon. If null, "fa-circle-o" will be used.</param>
+        /// <param name="fontAwesomeClass_">set menu item icon. If null, "fa-circle" will be used.</param>
         /// <param name="infrastructureAuthorizeAttributes_">set a list of <see cref="PermissionRequirementAttribute"/>.</param>
         /// <param name="microsoftAuthorizeAttributes_">set a list of <see cref="Microsoft.AspNetCore.Authorization.AuthorizeAttribute"/>.</param>
         [Obsolete]
@@ -57,7 +57,7 @@ namespace SoftinuxBase.Infrastructure
             Name = name_;
             Position = position_;
 
-            FontAwesomeClass = fontAwesomeClass_ ?? "fa-circle-o";
+            FontAwesomeClass = fontAwesomeClass_ ?? "far fa-circle";
 
             if (microsoftAuthorizeAttributes_ != null)
             {

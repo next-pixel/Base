@@ -24,7 +24,7 @@ $(function(){
     getContent(target);
 
     if (menu.length > 0) {
-        Metro.getPlugin(menu, "dropdown").open();
+        menu.data("dropdown").open();
     }
 
     $(".navview-menu").on(Metro.events.click, "a", function(e){
@@ -53,7 +53,7 @@ $(function(){
         pane.find("li").removeClass("active");
         $(this).closest("li").addClass("active");
 
-        window.history.pushState(href, href, hash);
+        window.history.pushState(href, href, "#"+hash);
 
         return false;
     })

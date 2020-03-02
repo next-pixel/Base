@@ -60,7 +60,7 @@ namespace SoftinuxBase.Security
                 MenuItem[] menuItems_ = new[]
                                     {
                        // new MenuItem("/administration", "Main", 100, null, new List<PermissionRequirementAttribute>(new[] { new PermissionRequirementAttribute(Permission.Admin, Constants.SoftinuxBaseSecurity), }))
-                        new MenuItem("/administration", "Main", 100, null)
+                        new MenuItem("/administration", "Main", 100, "fas fa-wrench")
                                     };
                 return new MenuGroup[]
                 {
@@ -68,7 +68,7 @@ namespace SoftinuxBase.Security
                         "Administration",
                         0, // Always first
                         menuItems_,
-                        "fa-wrench")
+                        "fas fa-wrench")
                 };
             }
         }

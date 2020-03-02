@@ -24,7 +24,7 @@
     authClass = !User.Identity.IsAuthenticated ? "h-vh-100 d-flex flex-justify-center flex-align-center" : "h-vh-100";
     // use typed "properties" variable else the compiler isn't able to understand the LINQ expression.
     System.Reflection.PropertyInfo[] properties = Model?.GetType().GetProperties();
-    bool hasModelWithErrorMessageProperty = properties != null && properties.Where(p => p.Name.Equals("ErrorMessage")).Any();
+    bool hasModelWithErrorMessageProperty = properties != null && properties.Any(p => p.Name.Equals("ErrorMessage"));
 }
 <body class="@authClass">
     <div class="notify-container"></div>

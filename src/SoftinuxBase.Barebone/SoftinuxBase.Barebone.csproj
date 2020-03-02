@@ -56,6 +56,7 @@
     <EmbeddedResource Include="..\..\node_modules\inputmask\dist\inputmask.min.js" LinkBase="node_modules\inputmask\dist\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\js\metro.js" LinkBase="node_modules\metro4-dist\js\" />
     <EmbeddedResource Include="..\..\node_modules\toastr\build\toastr.min.js" LinkBase="node_modules\toastr\build\" />
+    <!-- CodeMirror -->
     <EmbeddedResource Include="..\..\node_modules\codemirror\lib\codemirror.js" LinkBase="node_modules\codemirror\lib\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\mode\sql\sql.js" LinkBase="node_modules\codemirror\mode\sql\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\addon\hint\show-hint.js" LinkBase="node_modules\codemirror\addon\hint\" />
@@ -81,9 +82,6 @@
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-all.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-icons.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-colors.css" LinkBase="node_modules\metro4-dist\css\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\css\font-awesome.min.css" LinkBase="node_modules\font-awesome\css\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\css\font-awesome.css.map" LinkBase="node_modules\font-awesome\css\" />
-    <EmbeddedResource Include="..\..\node_modules\wfk-opensans\opensans.css" LinkBase="node_modules\wfk-opensans\" />
     <EmbeddedResource Include="..\..\node_modules\toastr\build\toastr.min.css" LinkBase="node_modules\toastr\build\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\lib\codemirror.css" LinkBase="node_modules\codemirror\lib\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\addon\hint\show-hint.css" LinkBase="node_modules\codemirror\addon\hint\" />
@@ -98,12 +96,13 @@
     <EmbeddedResource Include="..\..\node_modules\codemirror\theme\monokai.css" LinkBase="node_modules\codemirror\theme\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\theme\base16-dark.css" LinkBase="node_modules\codemirror\theme\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\theme\base16-light.css" LinkBase="node_modules\codemirror\theme\" />
+    <!-- CSS Fonts -->
+    <EmbeddedResource Include="..\..\node_modules\wfk-opensans\opensans.css" LinkBase="node_modules\wfk-opensans\" />
+    <!-- Font Awesome Free -->
+    <EmbeddedResource Include="..\..\node_modules\@fortawesome\fontawesome-free\css\**" LinkBase="node_modules\font-awesome\css\" />
+    <EmbeddedResource Include="..\..\node_modules\@fortawesome\fontawesome-free\js\**" LinkBase="node_modules\font-awesome\js\" />
+    <EmbeddedResource Include="..\..\node_modules\@fortawesome\fontawesome-free\webfonts\**" LinkBase="webfonts\" />
     <!-- Fonts -->
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.woff" LinkBase="node_modules\font-awesome\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.woff2" LinkBase="node_modules\font-awesome\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.ttf" LinkBase="node_modules\font-awesome\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\fontawesome-webfont.svg" LinkBase="node_modules\font-awesome\fonts\" />
-    <EmbeddedResource Include="..\..\node_modules\font-awesome\fonts\FontAwesome.otf" LinkBase="node_modules\font-awesome\fonts\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\mif\metro.ttf" LinkBase="mif\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\mif\metro.woff" LinkBase="mif\" />
   </ItemGroup>

@@ -44,7 +44,8 @@ namespace SoftinuxBase.Barebone
             new StyleSheet("/node_modules.wfk_opensans.opensans.css", 100),
             new StyleSheet("/node_modules.normalize.css.normalize.css", 200),
             new StyleSheet("/node_modules.bootstrap.css.bootstrap.min.css", 300),
-            new StyleSheet("/node_modules.font_awesome.css.font-awesome.min.css", 400),
+            new StyleSheet("/node_modules.font_awesome.css.all.css", 400),
+
             // -- Metro 4
             new StyleSheet("/node_modules.metro4_dist.css.metro.css", 410),
             new StyleSheet("/node_modules.metro4_dist.css.metro-all.css", 411),
@@ -82,7 +83,7 @@ namespace SoftinuxBase.Barebone
             new Script("/node_modules.bootstrap.js.bootstrap.bundle.min.js", 401),
             new Script("/node_modules.js_cookie.src.js.cookie.js", 500),
 
-            // -- Admin LTE
+            // -- Metro 4
             new Script("/node_modules.inputmask.dist.inputmask.min.js", 600),
             new Script("/node_modules.metro4_dist.js.metro.js", 660),
 
