@@ -89,7 +89,8 @@ namespace SoftinuxBase.Barebone
             // -- Roastr
             new Script("/node_modules.toastr.build.toastr.min.js", false, 661),
             new Script("/node_modules.ionicons.ionicons.js", false, 662),
-            new Script("/node_modules.ionicons.ionicons.esm.js", true, 663),
+            new Script("/node_modules.ionicons.ionicons.esm.js", false, 663),
+            new Script("/node_modules.ionicons.p-af480238.js", true, 664),
 
             // -- Codemirror
             // new Script("/node_modules.codemirror.lib.codemirror.js",662),
@@ -109,7 +110,8 @@ namespace SoftinuxBase.Barebone
             // new Script("/node_modules.codemirror.addon.dialog.dialog.js",676),
             // new Script("/node_modules.codemirror.addon.scroll.annotatescrollbar.js",677),
             // --
-            new Script("/Scripts.barebone.min.js", true,  700),
+            // new Script("/Scripts.barebone.min.js", true,  700),
+            new Script("/Scripts.barebone.js", true,  700),
             new Script("/Scripts.barebone_ajax.js", true,  701),
         };
 

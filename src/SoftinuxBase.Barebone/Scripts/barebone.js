@@ -1,53 +1,60 @@
 // Copyright © 2017 SOFTINUX. All rights reserved.
 // Licensed under the MIT License, Version 2.0. See License.txt in the project root for license information.
 
-// (function (application_) {
-//     'use strict';
+$(function(){
+    var hash = location.hash;
+    var target = hash.length > 0 ? hash.substr(1) : "dashboard";
+    var link = $(".navview-menu a[href*="+target+"]");
+    var menu = link.closest("ul[data-role=dropdown]");
+    var node = link.parent("li").addClass("active");
 
-//     application_.eventHandlers = application_.eventHandlers || [];
-//     application_.registerEventHandler = function (eventHandler_) {
-//         application_.eventHandlers.push(eventHandler_);
-//     };
+    function getContent(target){
+        window.on_page_functions = [];
+        $.get(target).then(
+            function(response){
+                $("#content-wrapper").html(response);
 
-//     application_.initializeEventHandlers = function () {
-//         $('body').on('click', 'button', function () {
-//             handleEvent('click', 'button', this);
-//         });
-
-//         $('body').on('change', 'input', function () {
-//             handleEvent('change', 'input', this);
-//         });
-//     };
-
-//     function handleEvent(eventName_, tagName_, element_) {
-//         for (let i = 0; i < application_.eventHandlers.length; i++) {
-//             if (application_.eventHandlers[i].eventName === eventName_ && application_.eventHandlers[i].tagName === tagName_) {
-//                 application_.eventHandlers[i].action(element_);
-//             }
-//         }
-//     }
-// })(window.application = window.application || {});
-
-// $(document).ready(
-//     function () {
-//         application.initializeEventHandlers();
-//     }
-// );
-
-// AdminLTE menu tweak: remember which menu group was open
-// https://github.com/almasaeed2010/AdminLTE/issues/1806
-
-[].forEach.call(document.querySelectorAll('ul.treeview-menu a'), (anchor_) => {
-    if (window.location.href.startsWith(anchor_.href)) {
-        let currentElement = anchor_;
-        for (; currentElement && currentElement !== document; currentElement = currentElement.parentNode) {
-            if (currentElement.matches('li')) {
-                // a parent li in menu (menu iteml li (immediate parent of anchor) or menu group li)
-                currentElement.classList.add('active');
-            } else if (currentElement.matches('.sidebar-menu > .treeview-menu')) {
-                // the root of menu is hit, stop iterating parent nodes
-                break;
+                window.on_page_functions.forEach(function(func){
+                    Metro.utils.exec(func, []);
+                });
             }
-        }
+        );
     }
+
+    getContent(target);
+
+    if (menu.length > 0) {
+        Metro.getPlugin(menu, "dropdown").open();
+    }
+
+    $(".navview-menu").on(Metro.events.click, "a", function(e){
+        var href = $(this).attr("href");
+        var pane = $(this).closest(".navview-pane");
+        var hash;
+
+        if (Metro.utils.isValue(href) > -1) {
+            document.location.href = href;
+            return false;
+        }
+
+        if (href === "#") {
+            return false;
+        }
+
+        hash = href.substr(1);
+        href = hash;
+
+        getContent(hash);
+
+        if (pane.hasClass("open")) {
+            pane.removeClass("open");
+        }
+
+        pane.find("li").removeClass("active");
+        $(this).closest("li").addClass("active");
+
+        window.history.pushState(href, href, hash);
+
+        return false;
+    })
 });
