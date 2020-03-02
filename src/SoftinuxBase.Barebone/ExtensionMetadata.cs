@@ -76,21 +76,19 @@ namespace SoftinuxBase.Barebone
         /// <inheritdoc />
         public IEnumerable<Script> Scripts => new[]
         {
-            new Script("/node_modules.jquery.dist.jquery.min.js", false, 100),
-            new Script("/node_modules.jquery_validation.dist.jquery.validate.min.js", false, 300),
-            new Script("/node_modules.jquery_validation_unobtrusive.dist.jquery.validate.unobtrusive.js", false, 400),
-            new Script("/node_modules.bootstrap.js.bootstrap.bundle.min.js", false, 401),
-            new Script("/node_modules.js_cookie.src.js.cookie.js", false, 500),
+            new Script("/node_modules.jquery.dist.jquery.min.js", 100),
+            new Script("/node_modules.jquery_validation.dist.jquery.validate.min.js", 300),
+            new Script("/node_modules.jquery_validation_unobtrusive.dist.jquery.validate.unobtrusive.js", 400),
+            new Script("/node_modules.bootstrap.js.bootstrap.bundle.min.js", 401),
+            new Script("/node_modules.js_cookie.src.js.cookie.js", 500),
 
             // -- Admin LTE
-            new Script("/node_modules.inputmask.dist.inputmask.min.js", false, 600),
-            new Script("/node_modules.metro4_dist.js.metro.js", false, 660),
+            new Script("/node_modules.inputmask.dist.inputmask.min.js", 600),
+            new Script("/node_modules.metro4_dist.js.metro.js", 660),
 
             // -- Roastr
-            new Script("/node_modules.toastr.build.toastr.min.js", false, 661),
-            new Script("/node_modules.ionicons.ionicons.js", false, 662),
-            new Script("/node_modules.ionicons.ionicons.esm.js", false, 663),
-            new Script("/node_modules.ionicons.p-af480238.js", true, 664),
+            new Script("/node_modules.toastr.build.toastr.min.js", 661),
+            new Script("/node_modules.ionicons.ionicons.js", 665, Script.JsType.NoModule),
 
             // -- Codemirror
             // new Script("/node_modules.codemirror.lib.codemirror.js",662),
@@ -111,8 +109,8 @@ namespace SoftinuxBase.Barebone
             // new Script("/node_modules.codemirror.addon.scroll.annotatescrollbar.js",677),
             // --
             // new Script("/Scripts.barebone.min.js", true,  700),
-            new Script("/Scripts.barebone.js", true,  700),
-            new Script("/Scripts.barebone_ajax.js", true,  701),
+            new Script("/Scripts.barebone.js",  700, Script.JsType.IsModule),
+            new Script("/Scripts.barebone_ajax.js",  701, Script.JsType.IsModule),
         };
 
         /// <inheritdoc />

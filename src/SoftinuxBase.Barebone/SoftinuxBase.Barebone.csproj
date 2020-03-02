@@ -73,10 +73,7 @@
     <EmbeddedResource Include="..\..\node_modules\codemirror\addon\dialog\dialog.js" LinkBase="node_modules\codemirror\addon\dialog\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\addon\scroll\annotatescrollbar.js" LinkBase="node_modules\codemirror\addon\scroll\" />
     <!-- Ionicons -->
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\ionicons.js" LinkBase="node_modules\ionicons\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\ionicons\ionicons.esm.js" LinkBase="node_modules\ionicons\" />
-    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\ionicons\p-af480238.js" LinkBase="node_modules\ionicons\" />
-    
+    <EmbeddedResource Include="..\..\node_modules\ionicons\dist\**" LinkBase="node_modules\ionicons\" />
     <!-- Css -->
     <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css" LinkBase="node_modules\bootstrap\css\" />
     <EmbeddedResource Include="..\..\node_modules\normalize.css\normalize.css" LinkBase="node_modules\normalize.css\" />
