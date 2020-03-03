@@ -51,11 +51,10 @@
     <EmbeddedResource Include="..\..\node_modules\jquery\dist\jquery.min.map" LinkBase="node_modules\jquery\dist\" />
     <EmbeddedResource Include="..\..\node_modules\jquery-validation\dist\jquery.validate.min.js" LinkBase="node_modules\jquery-validation\dist\" />
     <EmbeddedResource Include="..\..\node_modules\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js" LinkBase="node_modules\jquery-validation-unobtrusive\dist\" />
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js" LinkBase="node_modules\bootstrap\js\" />
     <EmbeddedResource Include="..\..\node_modules\js-cookie\src\js.cookie.js" LinkBase="node_modules\js-cookie\src\" />
     <EmbeddedResource Include="..\..\node_modules\inputmask\dist\inputmask.min.js" LinkBase="node_modules\inputmask\dist\" />
-    <EmbeddedResource Include="..\..\node_modules\metro4-dist\js\metro.js" LinkBase="node_modules\metro4-dist\js\" />
     <EmbeddedResource Include="..\..\node_modules\toastr\build\toastr.min.js" LinkBase="node_modules\toastr\build\" />
+    <EmbeddedResource Include="..\..\node_modules\metro4-dist\js\metro.js" LinkBase="node_modules\metro4-dist\js\" />
     <!-- CodeMirror -->
     <EmbeddedResource Include="..\..\node_modules\codemirror\lib\codemirror.js" LinkBase="node_modules\codemirror\lib\" />
     <EmbeddedResource Include="..\..\node_modules\codemirror\mode\sql\sql.js" LinkBase="node_modules\codemirror\mode\sql\" />
@@ -76,7 +75,6 @@
     <!-- Ionicons -->
     <EmbeddedResource Include="..\..\node_modules\ionicons\dist\**" LinkBase="node_modules\ionicons\" />
     <!-- Css -->
-    <EmbeddedResource Include="..\..\node_modules\bootstrap\dist\css\bootstrap.min.css" LinkBase="node_modules\bootstrap\css\" />
     <EmbeddedResource Include="..\..\node_modules\normalize.css\normalize.css" LinkBase="node_modules\normalize.css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro.css" LinkBase="node_modules\metro4-dist\css\" />
     <EmbeddedResource Include="..\..\node_modules\metro4-dist\css\metro-all.css" LinkBase="node_modules\metro4-dist\css\" />
