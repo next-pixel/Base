@@ -44,7 +44,7 @@ namespace SoftinuxBase.Barebone
             new StyleSheet("/node_modules.wfk_opensans.opensans.css", 10),
             new StyleSheet("/node_modules.normalize.css.normalize.css", 20),
             new StyleSheet("/node_modules.font_awesome.css.all.css", 30),
-            
+
             // -- Toastr
             new StyleSheet("/node_modules.toastr.build.toastr.min.css", 40),
 
@@ -70,6 +70,10 @@ namespace SoftinuxBase.Barebone
             // new StyleSheet("/node_modules.codemirror.theme.base16-light.css", 427),
             // --
             new StyleSheet("/Styles.barebone.css", 60),
+            new StyleSheet("/Styles.barebone_font.css", 61),
+            new StyleSheet("/Styles.barebone_dashboard.css", 62),
+            new StyleSheet("/Styles.barebone_tools.css", 63),
+            new StyleSheet("/Styles.barebone_media.css", 64),
             new StyleSheet("/css/Styles.css", 70)
         };
 

@@ -24,7 +24,7 @@
     <Import Project="..\..\documentation.props" />
   </ImportGroup>
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="5.1.0" />
@@ -106,5 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\barebone_dashboard.css" />
+    <Content Include="Styles\barebone_fonts.css" />
+    <Content Include="Styles\barebone_tools.css" />
+    <Content Include="Styles\barebone_media.css" />
   </ItemGroup>
 </Project>
