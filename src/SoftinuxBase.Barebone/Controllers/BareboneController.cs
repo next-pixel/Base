@@ -50,5 +50,17 @@ namespace SoftinuxBase.Barebone.Controllers
         {
             return await Task.Run(() => View(new Barebone.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }));
         }
+        
+        /// <summary>
+        /// Partial view for not found.
+        /// </summary>
+        /// <returns>Error view.</returns>
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [HttpGet]
+        [ActionName("NotFound")]
+        public async Task<IActionResult> NotFoundAsync()
+        {
+            return await Task.Run(() => View(new Barebone.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier, Url = HttpContext.Request.Path}));
+        }
     }
 }

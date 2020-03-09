@@ -1,0 +1,15 @@
+@model SoftinuxBase.Barebone.ViewModels.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Not found";
+}
+<h1>Not found</h1>
+
+<h2>Nothing was found at url @(Model.Url)</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
