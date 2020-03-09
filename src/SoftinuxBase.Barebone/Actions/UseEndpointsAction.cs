@@ -10,7 +10,7 @@ namespace SoftinuxBase.Barebone.Actions
 {
     public class UseEndpointsAction : IUseEndpointsAction
     {
-        public int Priority => 100;
+        public int Priority => 11000;
 
         public void Execute(IEndpointRouteBuilder endpointRouteBuilder_, IServiceProvider serviceProvider_)
         {
