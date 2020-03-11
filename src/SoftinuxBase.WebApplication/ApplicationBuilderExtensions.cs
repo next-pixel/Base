@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -29,9 +28,7 @@ namespace SoftinuxBase.WebApplication
         /// <param name="loggerFactory_">The logger factory passed to the Configure method of the web application's Startup class.</param>
         /// <param name="configuration_">The application configuration passed to the Configure method of the web application's Startup class.</param>
         /// <param name="antiForgery_">The anti forgery system passed to the Configure method of the web application's Startup class.</param>
-        public static void UseSoftinuxBase(this IApplicationBuilder applicationBuilder_,
-            IWebHostEnvironment hostingEnvironment_, ILoggerFactory loggerFactory_, IConfiguration configuration_,
-            IAntiforgery antiForgery_)
+        public static void UseSoftinuxBase(this IApplicationBuilder applicationBuilder_, IWebHostEnvironment hostingEnvironment_, ILoggerFactory loggerFactory_, IConfiguration configuration_, IAntiforgery antiForgery_)
         {
             // 1. Error management
             if (hostingEnvironment_.IsDevelopment())
@@ -77,8 +74,7 @@ namespace SoftinuxBase.WebApplication
                     // The request token can be sent as a JavaScript-readable cookie,
                     // and Angular uses it by default.
                     var tokens = antiForgery_.GetAndStoreTokens(context_);
-                    context_.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken,
-                        new CookieOptions() {HttpOnly = false});
+                    context_.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, new CookieOptions() { HttpOnly = false });
                 }
 
                 return next_(context_);
@@ -88,7 +84,6 @@ namespace SoftinuxBase.WebApplication
             // - UseRouting (built-in in ExtCore)
             // - UseAuthorization (custom)
             // - UseEndpoints (built-in in ExtCore and overriden)
-
             applicationBuilder_.UseHttpsRedirection();
             applicationBuilder_.UseCors();
             applicationBuilder_.UseAuthentication();
