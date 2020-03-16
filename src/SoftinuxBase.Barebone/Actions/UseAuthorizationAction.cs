@@ -14,6 +14,6 @@ namespace SoftinuxBase.Barebone.Actions
             applicationBuilder.UseAuthorization();
         }
 
-        public int Priority { get { return 10500; } }
+        public int Priority { get { return 10001; } }
     }
 }

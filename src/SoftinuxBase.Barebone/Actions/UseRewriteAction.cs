@@ -12,10 +12,9 @@ namespace SoftinuxBase.Barebone.Actions
     {
         public void Execute(IApplicationBuilder applicationBuilder, IServiceProvider serviceProvider)
         {
-            var options = new RewriteOptions()
-                .AddRewrite(@"/#dashboard", "/", skipRemainingRules: true);
+            //var options = new RewriteOptions().AddRewrite(@"/#dashboard", "/", skipRemainingRules: true);
 
-            applicationBuilder.UseRewriter(options);
+            //applicationBuilder.UseRewriter(options);
         }
 
         public int Priority { get { return 5000; } }
